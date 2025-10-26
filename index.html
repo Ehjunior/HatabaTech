@@ -1,0 +1,591 @@
+<!DOCTYPE DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hataba Technology - Transformamos seu sonho em sistema</title>
+
+    <meta name="description" content="Hataba Technology – Desenvolvemos sistemas web e mobile sob medida, com BI, IA e integração inteligente para transformar seu negócio digital.">
+    <link rel="canonical" href="https://hatabatech.com.br"> <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Hataba Technology - Transformamos seu sonho em sistema">
+    <meta property="og:description" content="Desenvolvemos sistemas web e mobile sob medida, com BI, IA e integração inteligente para transformar seu negócio digital.">
+    <meta property="og:image" content="https://hatabatech.com.br/foto-og.png"> <meta property="og:url" content="https://hatabatech.com.br"> <meta property="og:type" content="website">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Nova+Square&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+	<script src="https://cdn.tailwindcss.com"></script>
+    
+	<script>
+		tailwind.config = {
+			theme: {
+			extend: {
+				fontFamily: {
+				// Aqui você "sobrescreve" o font-sans padrão
+				'sans': ['Google Sans Code', 'ui-sans-serif', 'system-ui', 'sans-serif']
+				}
+			}
+			}
+		}
+		</script>
+	<style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .delay-2 { animation-delay: 0.4s; opacity: 0; }
+        .delay-3 { animation-delay: 0.6s; opacity: 0; }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .section-padding {
+            padding: 80px 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 50px 20px;
+            }
+        }
+        
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            flex-shrink: 0;
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(59, 130, 246, 0.8);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+            z-index: 10;
+        }
+        
+        .carousel-nav:hover {
+            background: rgba(59, 130, 246, 1);
+        }
+        
+        .carousel-prev {
+            left: 20px;
+        }
+        
+        .carousel-next {
+            right: 20px;
+        }
+        
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .carousel-dot.active {
+            background: #3b82f6;
+        }
+		
+		.carousel-track {
+			display: flex;
+			transition: transform 0.8s ease-in-out;
+			align-items: stretch; 
+		}
+		
+		.carousel-slide {
+			flex: 0 0 100%;
+			height: auto; 
+		}
+    </style>
+</head>
+<body class="font-sans">
+    <header class="gradient-bg text-white">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center ">
+            <div class="flex items-center">
+                        <img src="logo.png" alt="Logo da Hataba Tech" class="ml-3 h-10 w-auto">
+                    </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#sobre" class="hover:text-blue-200 transition">Sobre</a>
+                <a href="#servicos" class="hover:text-blue-200 transition">Serviços</a>
+				<a href="#portfolio" class="hover:text-blue-200 transition">Portfólio</a>
+                <a href="#contato" class="hover:text-blue-200 transition">Contato</a>
+            </div>
+        </nav>
+        
+        <section class="container mx-auto px-6 py-20 md:py-32 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in-up">
+                Transformamos<br>o seu sonho em<br>sistema.
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 fade-in-up delay-1 max-w-3xl mx-auto">
+                Seja qual for o seu segmento, somos a parceira estratégica em tecnologia que sua empresa precisa. Desenvolvemos softwares e serviços que impulsionam resultados para negócios de qualquer porte.
+            </p>
+            <a href="#contato" class="fade-in-up delay-2 inline-block bg-white text-blue-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-50 transition shadow-lg">
+                Fale Conosco
+            </a>
+        </section>
+    </header>
+
+    <section id="sobre" class="section-padding bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">Quem Somos?</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-700">Missão</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Ajudar pessoas e empresas a transformarem seus sonhos em sistemas eficientes.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-700">Visão</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Até 2026 ser referência no cenário estadual em Sistemas Web e Mobile.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-700">Valores</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Entregar com qualidade, ética, dinamismo e foco no cliente.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center max-w-3xl mx-auto">
+                <p class="text-lg text-gray-700 font-bold  leading-relaxed">
+                    Com orgulho de nossas raízes em Nova Friburgo/RJ, a Hataba Technology projeta o futuro de empresas desde 2017. Somos o motor de inovação em TI para negócios de todos os tamanhos e setores.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="section-padding bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4 text-gray-800">Serviços</h2>
+            <p class="text-center text-gray-600 mb-16 text-lg">Soluções completas em tecnologia para o seu negócio</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl shadow-lg card-hover border border-blue-100">
+                    <div class="w-14 h-14 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Soluções Web e Mobile</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Criamos sistemas inteligentes e personalizados para o seu negócio, prontos para funcionar perfeitamente em computadores, tablets e celulares.
+                    </p>
+                </div>
+                 
+                <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl shadow-lg card-hover border border-blue-100">
+                    <div class="w-14 h-14 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+						</svg>
+                     </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Chat Bot´s</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Deixe a tecnologia cuidar do atendimento enquanto você foca no crescimento. Criamos e integramos chatbots com IA que entendem, respondem e se adaptam conectando sua empresa a clientes em tempo real, 24h por dia.
+                    </p>
+                </div>
+                                
+                <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl shadow-lg card-hover border border-blue-100">
+                    <div class="w-14 h-14 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain-circuit-icon lucide-brain-circuit w-8 h-8 text-white"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M9 13a4.5 4.5 0 0 0 3-4"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M12 13h4"/><path d="M12 18h6a2 2 0 0 1 2 2v1"/><path d="M12 8h8"/><path d="M16 8V5a2 2 0 0 1 2-2"/><circle cx="16" cy="13" r=".5"/><circle cx="18" cy="3" r=".5"/><circle cx="20" cy="21" r=".5"/><circle cx="20" cy="8" r=".5"/>
+						</svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Inteligência Artificial</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Aproveite o poder da IA para transformar dados em decisões, automatizar processos e impulsionar resultados. Criamos soluções inteligentes que aprendem, preveem e evoluem com o seu negócio.
+                    </p>
+                </div>
+               
+                <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl shadow-lg card-hover border border-blue-100">
+                    <div class="w-14 h-14 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Business Intelligence and Analytics</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Torne seus dados um aliado estratégico! Democratizamos o BI para empresas de todos os portes, transformando informações em indicadores que impulsionam a sua gestão.
+                    </p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl shadow-lg card-hover border border-blue-100">
+                    <div class="w-14 h-14 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-blocks-icon lucide-blocks w-8 h-8 text-white"><path d="M10 22V7a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 0 0-1-1H2"/><rect x="14" y="2" width="8" height="8" rx="1"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Integração</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Quando seus sistemas se conectam, sua empresa ganha agilidade. Pare de perder tempo com ferramentas que não conversam, nós unimos tudo em um ecossistema eficiente.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl shadow-lg card-hover border border-blue-100">
+                    <div class="w-14 h-14 bg-blue-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Cloud Computing</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Hospede suas aplicações, serviços e plataformas com a gente. E caso queira, podemos te ajudar a escolher o melhor provedor de serviços e hospedagem.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	 <section id="portfolio" class="section-padding bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4 text-gray-800">Conheça nosso trabalho</h2>
+            <p class="text-center text-gray-600 mb-16 text-lg">Confira alguns dos serviços que desenvolvemos para transformar negócios como o seu.</p>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="carousel-container rounded-2xl overflow-hidden shadow-2xl">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide flex-none w-full h-auto">
+                            <div class="bg-gradient-to-br from-blue-600 to-blue-800 p-12 text-white h-[500px] flex flex-col justify-center items-center text-center">
+                                <div class="w-26 h-48 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-6">
+                                    <img src="Hug.png" alt="Sistema de Relacionamento 50+" class="w-full h-full object-cover rounded-2xl">
+                                </div>
+                                <h3 class="text-3xl font-bold mb-4">Sistema de Relacionamentos</h3>
+                                <p class="text-xl mb-6 max-w-2xl">Plataforma completa de relacionamento social para pessoas 50+.</p>
+                                <div class="flex flex-wrap gap-2 justify-center">
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">React</span>
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Node.js</span>
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide flex-none w-full h-auto">
+                            <div class="bg-gradient-to-br from-blue-600 to-blue-800 p-12 text-white h-[500px] flex flex-col justify-center items-center text-center">
+                                <div class="w-26 h-48 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-6">
+                                    <img src="Triper.png" alt="App de Roteiros de Viagens" class="w-full h-full object-cover rounded-2xl">
+                                </div>
+                                <h3 class="text-3xl font-bold mb-4">App de Roteiros de Viagens</h3>
+                                <p class="text-xl mb-6 max-w-2xl">Aplicativo que reúne viajantes e agentes de viagens</p>
+								</br>
+                                <div class="flex flex-wrap gap-2 justify-center">
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">React</span>
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Node.js</span>
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+									</br>
+                                </div>
+                            </div>
+                        </div>
+                        
+						<!-- Slide 3 -->
+                        <div class="carousel-slide flex-none w-full h-auto">
+                            <div class="bg-gradient-to-br from-blue-600 to-blue-800 p-12 text-white h-[500px] flex flex-col justify-center items-center text-center">
+                                <div class="w-50 h-48 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-6">
+                                    <img src="clinica.png" alt="Sistema de Clínica" class="w-full h-full object-cover rounded-2xl">
+                                </div>
+                                <h3 class="text-3xl font-bold mb-4">Sistema para Clínicas</h3>
+                                <p class="text-xl mb-6 max-w-2xl">Plataforma completa para cadastro de pacientes, profissionais, agendamento, integração com Whatsapp para Atendimento com IA humanizada, Prontuários/HDA/HPP e outras fichas, Fluxo de Caixa e Dashboards/Relatórios</p>
+								</br>
+                                <div class="flex flex-wrap gap-2 justify-center">
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">React</span>
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Node.js</span>
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">MySQL</span>
+									<span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">N8N</span>
+									<span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">WhatsApp</span>
+									<span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Gemini</span>
+									</br>
+                                </div>
+                            </div>
+                        </div>
+						
+						<!-- Slide 4 -->
+                        <!--<div class="carousel-slide flex-none w-full h-auto">
+                            <div class="bg-gradient-to-br from-blue-600 to-blue-800 p-12 text-white h-[500px] flex flex-col justify-center items-center text-center">
+                                <div class="w-50 h-48 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-6">
+                                    <img src="4prompter.png" alt="Sistema para teleprompter" class="w-full h-full object-cover rounded-2xl">
+                                </div>
+                                <h3 class="text-3xl font-bold mb-4">Sistema para Teleprompter</h3>
+                                <p class="text-xl mb-6 max-w-2xl">Plataforma para estúdio Audiovisual contando com edição de legendas e roteiros em tempo real.</p>
+								</br>
+                                <div class="flex flex-wrap gap-2 justify-center">
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Angular</span>
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Node.js</span>
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+									</br>
+                                </div>
+                            </div>
+                        </div>-->
+						
+                        <!-- Slide 5 -->
+                        <div class="carousel-slide">
+                            <div class="bg-gradient-to-br from-blue-700 to-blue-900 p-12 text-white h-[500px] flex flex-col justify-center items-center text-center">
+                                <div class="w-50 h-48 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-6">
+                                    <img src="Dashboards.png" alt="Dashboards" class="w-full h-full object-cover rounded-2xl">
+                                </div>
+                                <h3 class="text-3xl font-bold mb-4">Dashboards de BI</h3>
+                                <p class="text-xl mb-6 max-w-2xl">Painéis interativos com gráficos dinâmicos e análise de dados em tempo real de vendas globais para empresa de E-Commerce</p>
+                                <div class="flex flex-wrap gap-2 justify-center">
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Power BI</span>
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Python</span>
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Oracle</span>
+									<span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 5 -->
+                        <div class="carousel-slide">
+                            <div class="bg-gradient-to-br from-blue-600 to-blue-800 p-12 text-white h-[500px] flex flex-col justify-center items-center text-center">
+                                <div class="w-24 h-24 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mb-6">
+                                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-3xl font-bold mb-4">Sistema de RH</h3>
+                                <p class="text-xl mb-6 max-w-2xl">Plataforma completa para gestão de recursos humanos com controle de ponto, folha de pagamento e avaliação de desempenho.</p>
+                                <div class="flex flex-wrap gap-2 justify-center">
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Vue.js</span>
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">Laravel</span>
+                                    <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">MySQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation buttons -->
+                    <button class="carousel-nav carousel-prev" onclick="previousSlide()">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button class="carousel-nav carousel-next" onclick="nextSlide()">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Dots indicator -->
+                <div class="carousel-dots" id="carouselDots">
+                    <div class="carousel-dot active" onclick="goToSlide(0)"></div>
+                    <div class="carousel-dot" onclick="goToSlide(1)"></div>
+                    <div class="carousel-dot" onclick="goToSlide(2)"></div>
+                    <div class="carousel-dot" onclick="goToSlide(3)"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="section-padding gradient-bg text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4">Chama a gente!</h2>
+            <p class="text-center text-blue-100 mb-16 text-lg">Estamos prontos para transformar seu sonho em realidade</p>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Email</h3>
+                    <a href="mailto:meajuda@hatabatech.com.br" class="text-blue-100 hover:text-white transition break-all">
+                        Envia email
+                    </a>
+                </div>
+                
+                <div class="text-center p-6">
+					<div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+						<svg class="w-8 h-8 text-white" fill="white" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+							<!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M380.9 97.1c-41.9-42-97.7-65.1-157-65.1-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480 117.7 449.1c32.4 17.7 68.9 27 106.1 27l.1 0c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1s56.2 81.2 56.1 130.5c0 101.8-84.9 184.6-186.6 184.6zM325.1 300.5c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8s-14.3 18-17.6 21.8c-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7s-12.5-30.1-17.1-41.2c-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2s-9.7 1.4-14.8 6.9c-5.1 5.6-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4s4.6-24.1 3.2-26.4c-1.3-2.5-5-3.9-10.5-6.6z"/>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-2">WhatsApp</h3>
+					<a href="https://wa.me/5521971928045?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Hataba%20Technology." 
+						class="text-blue-100 hover:text-white transition" 
+						target="_blank" 
+						rel="noopener noreferrer">
+						Enviar mensagem
+					</a>
+				</div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Endereço</h3>
+                    <p class="text-blue-100">
+                        Av. Euterpe Friburguense, 65 - Centro<br>
+                        Nova Friburgo/RJ
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Hataba Technology Ltda. Todos os direitos reservados.</p>
+            <p class="mt-2 text-sm">Transformando sonhos em sistemas desde 2017</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Carousel functionality
+        let currentSlide = 0;
+        const totalSlides = 4;
+        const track = document.getElementById('carouselTrack');
+        const dots = document.querySelectorAll('.carousel-dot');
+
+        function updateCarousel() {
+            const translateX = -currentSlide * 100;
+            track.style.transform = `translateX(${translateX}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+
+        // Auto-play carousel
+        setInterval(nextSlide, 8000);
+
+        // Touch/swipe support for mobile
+        let startX = 0;
+        let isDragging = false;
+
+        track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        });
+
+        track.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+        });
+
+        track.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+            
+            const endX = e.changedTouches[0].clientX;
+            const diffX = startX - endX;
+            
+            if (Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    nextSlide();
+                } else {
+                    previousSlide();
+                }
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'993c554ce7a96d5e',t:'MTc2MTMzODg4Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
